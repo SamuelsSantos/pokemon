@@ -60,8 +60,13 @@ Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles ser
 ## Setup
 
 ### Build
+
 ```bash
+   # Build Unix
    go build
+
+   # Build Windows
+   env GOOS=windows GOARCH=amd64 go build
 ```
 
 ### run
@@ -78,3 +83,5 @@ Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles ser
 ```bash
    go test -run=XXX -bench=.
 ```
+
+### 
