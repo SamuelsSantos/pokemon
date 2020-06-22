@@ -1,6 +1,7 @@
 package validate
 
 import (
+	"errors"
 	"regexp"
 	"strings"
 )
@@ -8,16 +9,19 @@ import (
 const validCharacteres = "nseoNSEO"
 
 // IsValidCharacteres is a verification the text contains just valid characters
-func IsValidCharacteres(text string) bool {
+func IsValidCharacteres(text string) (bool, error) {
 
 	if isEmpty(text) {
-		return false
+		return false, errors.New("A jornada não foi informada")
 	}
 
 	rule := "^[" + validCharacteres + "]*$"
-	match, _ := regexp.MatchString(rule, text)
+	matched, err := regexp.MatchString(rule, text)
+	if err != nil || !matched {
+		return false, errors.New("A jornada possui characteres inválidos")
+	}
 
-	return match
+	return matched, nil
 }
 
 // isEmpty is a verification the text is empty

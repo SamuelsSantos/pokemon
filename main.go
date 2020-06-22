@@ -3,28 +3,46 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"pokemon/capture"
 	"pokemon/validate"
-	"time"
 )
 
-func processar(movements string) {
+func processar(movements string) (int, error) {
 
-	if !validate.IsValidCharacteres(movements) {
-		fmt.Println("Jornada inválida!")
+	if _, err := validate.IsValidCharacteres(movements); err != nil {
+		return 0, err
+	}
+	fmt.Println(movements, " >>>>>>>>> ")
+
+	return capture.AmountOfCapturedPokemons(movements), nil
+}
+
+func doProcessar(stdIn io.Reader) (int, error) {
+	scanner := bufio.NewScanner(stdIn)
+	var movimentos string
+	fmt.Println("Movimentos válidos: N, S, E ou O sendo (Norte, Sul, Este, Oeste)")
+	fmt.Print("Digite a jornada do Ash: ")
+	if scanner.Scan() {
+		movimentos = scanner.Text()
+	}
+	if err := scanner.Err(); err != nil {
+		return 0, err
 	}
 
-	start := time.Now()
-	amount := capture.AmountOfCapturedPokemons(movements)
-	elapsed := time.Since(start)
-	fmt.Println("O Ash encontrou ", amount, " pokemon(s).", "Tempo de processamento: ", elapsed.Minutes(), "minutos")
+	amount, err := processar(movimentos)
+	if err != nil {
+		return 0, err
+	}
+
+	return amount, nil
 }
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Movimentos válidos: N, S, E ou O sendo (Norte, Sul, Este, Oeste)")
-	fmt.Print("Digite a jornada do Ash: ")
-	movimentos, _ := reader.ReadString('\n')
-	processar(movimentos[:len(movimentos)-1])
+	if amount, err := doProcessar(os.Stdin); err != nil {
+		fmt.Printf("Falha: %+v\n", err)
+	} else {
+		fmt.Println(amount)
+	}
 }

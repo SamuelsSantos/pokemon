@@ -11,7 +11,7 @@ func TestRandomJorney(t *testing.T) {
 		var expected = true
 		var jorney = GetRandomJorney(100)
 		var validSize = len(jorney) == 100
-		var validJorney = validate.IsValidCharacteres(jorney)
+		var validJorney, _ = validate.IsValidCharacteres(jorney)
 		var result = validSize && validJorney
 
 		if result != expected {

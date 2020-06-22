@@ -8,44 +8,48 @@ func TestValidate(t *testing.T) {
 
 	t.Run("When_Text_Is_NSEO_Then_Is_Valid", func(t *testing.T) {
 		var expected = true
-		var result = IsValidCharacteres("NSEO")
+		var result, error = IsValidCharacteres("NSEO")
 		if result != expected {
 			t.Error(
 				"expected", expected,
 				"got", result,
+				"msg", error,
 			)
 		}
 	})
 
 	t.Run("When_Text_Is_nseo_Then_Is_Valid", func(t *testing.T) {
 		var expected = true
-		var result = IsValidCharacteres("nseo")
+		var result, error = IsValidCharacteres("nseo")
 		if result != expected {
 			t.Error(
 				"expected", expected,
 				"got", result,
+				"msg", error,
 			)
 		}
 	})
 
 	t.Run("When_Text_Is_NSEOnseo0_Then_Is_InValid", func(t *testing.T) {
 		var expected = false
-		var result = IsValidCharacteres("NSEOnseo0")
+		var result, error = IsValidCharacteres("NSEOnseo0")
 		if result != expected {
 			t.Error(
 				"expected", expected,
 				"got", result,
+				"msg", error,
 			)
 		}
 	})
 
 	t.Run("When_Text_Is_Empty_Then_Is_InValid", func(t *testing.T) {
 		var expected = false
-		var result = IsValidCharacteres("")
+		var result, error = IsValidCharacteres("")
 		if result != expected {
 			t.Error(
 				"expected", expected,
 				"got", result,
+				"msg", error,
 			)
 		}
 	})

@@ -56,7 +56,7 @@ Pensando no plano cartesiano, o ponto de partida é o encontro dos eixos x e y, 
 
     Ao movimentar-se sentido *OESTE* então a coordenada *X* deve ser decrementada e a coordenada *Y* deve-se manter com o último valor atribuido. (X--, Y)
 
-Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles serão únicos.
+Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles serão únicos. 
 
 
 ## Setup
