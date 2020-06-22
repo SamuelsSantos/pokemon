@@ -14,7 +14,6 @@ func processar(movements string) (int, error) {
 	if _, err := validate.IsValidCharacteres(movements); err != nil {
 		return 0, err
 	}
-	fmt.Println(movements, " >>>>>>>>> ")
 
 	return capture.AmountOfCapturedPokemons(movements), nil
 }
