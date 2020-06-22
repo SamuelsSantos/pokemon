@@ -38,7 +38,7 @@ func TestCapture(t *testing.T) {
 	})
 	t.Run("1000000!=0", func(t *testing.T) {
 		var expected = 0
-		value := randomString(100000)
+		value := getJorney(100000)
 		var result = AmountOfCapturedPokemons(value)
 		if result == expected {
 			t.Error(
@@ -56,7 +56,7 @@ func benchmarkAmountOfCapturedPokemons(i int, b *testing.B) {
 	var r int
 	for n := 0; n < b.N; n++ {
 		b.StopTimer()
-		jorney := randomString(i)
+		jorney := getJorney(i)
 		b.StartTimer()
 		r = AmountOfCapturedPokemons(jorney)
 	}

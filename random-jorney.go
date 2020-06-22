@@ -6,7 +6,7 @@ import (
 
 var pool = "NSEO"
 
-func randomString(l int) string {
+func getJorney(l int) string {
 	bytes := make([]byte, l)
 	for i := 0; i < l; i++ {
 		bytes[i] = pool[rand.Intn(3)]
