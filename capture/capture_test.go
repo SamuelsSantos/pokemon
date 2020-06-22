@@ -53,31 +53,24 @@ func TestCapture(t *testing.T) {
 var result int
 
 func benchmarkAmountOfCapturedPokemons(i int, b *testing.B) {
-	var r int
 	for n := 0; n < b.N; n++ {
-		b.StopTimer()
 		jorney := rand.GetRandomJorney(i)
-		b.StartTimer()
-		r = AmountOfCapturedPokemons(jorney)
+		AmountOfCapturedPokemons(jorney)
 	}
-	result = r
 }
 
-func Benchmark1000(b *testing.B) {
+func BenchmarkAmountOfCapturedPokemons_1000(b *testing.B) {
 	benchmarkAmountOfCapturedPokemons(1000, b)
 }
-func Benchmark50000(b *testing.B) {
-	benchmarkAmountOfCapturedPokemons(5000, b)
+func BenchmarkAmountOfCapturedPokemons_10000(b *testing.B) {
+	benchmarkAmountOfCapturedPokemons(10000, b)
 }
-func Benchmark10000(b *testing.B) {
+func BenchmarkAmountOfCapturedPokemons_100000(b *testing.B) {
 	benchmarkAmountOfCapturedPokemons(100000, b)
 }
-func Benchmark500000(b *testing.B) {
-	benchmarkAmountOfCapturedPokemons(500000, b)
-}
-func Benchmark1000000(b *testing.B) {
+func BenchmarkAmountOfCapturedPokemons_1000000(b *testing.B) {
 	benchmarkAmountOfCapturedPokemons(1000000, b)
 }
-func Benchmark50000000(b *testing.B) {
-	benchmarkAmountOfCapturedPokemons(5000000, b)
+func BenchmarkAmountOfCapturedPokemons_10000000(b *testing.B) {
+	benchmarkAmountOfCapturedPokemons(10000000, b)
 }

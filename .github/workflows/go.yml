@@ -33,5 +33,7 @@ jobs:
 
       - name: Test
         run: go test ./... -v -cover
+      - name: Benchmark
+        run: go test ./capture  -run=XXX -bench=.
     # - name: Test Coverage
     #   run: go test ./...  -coverprofile=./coverage/tests.out && go tool cover -html=./coverage/tests.out -o ./coverage/coverage-report.html

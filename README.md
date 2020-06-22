@@ -100,4 +100,8 @@ Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles ser
    go test ./...  -run=XXX -bench=.
 ```
 
+Resultado: 
+
+![Alt Text](./benchmark/1000_to_10000000.png)
+
 ### 
