@@ -80,7 +80,7 @@ Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles ser
 
 ### tests
 ```bash
-   go test ./...git p
+   go test ./... -v
 
    # Ouput coverage std out
    go test ./... -v -cover  
