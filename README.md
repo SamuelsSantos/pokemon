@@ -61,6 +61,19 @@ Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles ser
 
 ## Setup
 
+- Os passos para a configuração/instalação do Golang encontra-se neste [link](https://golang.org/doc/install).
+
+- Configurar o [workspace](https://github.com/aalvesjr/Go-Hands-On/blob/master/workspace.md).
+
+- Clonar o repositório no seu workspace e acessar a pasta do projeto.
+
+   ```bash
+      git clone https://github.com/desafios-job/pokemon.git && pokemon
+   ```
+
+E então seguir os passos abaixo:
+
+
 ### Build
 
 ```bash
@@ -99,6 +112,8 @@ Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles ser
 ```bash
    go test ./...  -run=XXX -bench=.
 ```
+
+
 
 Resultado: 
 
