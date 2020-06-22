@@ -1,4 +1,4 @@
-package main
+package validate
 
 import (
 	"regexp"
@@ -7,8 +7,8 @@ import (
 
 const validCharacteres = "nseoNSEO"
 
-// isValidCharacteres is a verification the text contains just valid characters
-func isValidCharacteres(text string) bool {
+// IsValidCharacteres is a verification the text contains just valid characters
+func IsValidCharacteres(text string) bool {
 
 	if isEmpty(text) {
 		return false

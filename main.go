@@ -4,21 +4,21 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"pokemon/capture"
+	"pokemon/validate"
 	"time"
 )
 
 func processar(movements string) {
 
-	if isValidCharacteres(movements) {
-
-		start := time.Now()
-		amount := AmountOfCapturedPokemons(movements)
-		elapsed := time.Since(start)
-		fmt.Println("O Ash encontrou ", amount, " pokemon(s).", "Tempo de processamento: ", elapsed.Minutes(), "minutos")
-
-	} else {
+	if !validate.IsValidCharacteres(movements) {
 		fmt.Println("Jornada inválida!")
 	}
+
+	start := time.Now()
+	amount := capture.AmountOfCapturedPokemons(movements)
+	elapsed := time.Since(start)
+	fmt.Println("O Ash encontrou ", amount, " pokemon(s).", "Tempo de processamento: ", elapsed.Minutes(), "minutos")
 }
 
 func main() {

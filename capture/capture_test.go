@@ -1,6 +1,7 @@
-package main
+package capture
 
 import (
+	"pokemon/rand"
 	"testing"
 )
 
@@ -38,7 +39,7 @@ func TestCapture(t *testing.T) {
 	})
 	t.Run("1000000!=0", func(t *testing.T) {
 		var expected = 0
-		value := getJorney(100000)
+		value := rand.GetRandomJorney(100000)
 		var result = AmountOfCapturedPokemons(value)
 		if result == expected {
 			t.Error(
@@ -46,7 +47,6 @@ func TestCapture(t *testing.T) {
 				"got", result,
 			)
 		}
-
 	})
 }
 
@@ -56,7 +56,7 @@ func benchmarkAmountOfCapturedPokemons(i int, b *testing.B) {
 	var r int
 	for n := 0; n < b.N; n++ {
 		b.StopTimer()
-		jorney := getJorney(i)
+		jorney := rand.GetRandomJorney(i)
 		b.StartTimer()
 		r = AmountOfCapturedPokemons(jorney)
 	}
