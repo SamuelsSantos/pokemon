@@ -56,8 +56,16 @@ Pensando no plano cartesiano, o ponto de partida é o encontro dos eixos x e y, 
 
     Ao movimentar-se sentido *OESTE* então a coordenada *X* deve ser decrementada e a coordenada *Y* deve-se manter com o último valor atribuido. (X--, Y)
 
-Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles serão únicos. 
+Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles serão únicos.
 
+### Validações:
+   - Se a jornada digitada conter caracteres diferentes de N,S,E,O então o valor será 0 e vai aparecer uma mensagem de erro no stdOut.
+  
+      Erro: _"A jornada possui characteres inválidos."_ 
+
+   - Se a jornada informa for vazia então o valor será 0 e vai aparecer uma mensagem de erro no stdOut.
+  
+      Erro: _"A jornada não foi informada."_ 
 
 ## Setup
 
