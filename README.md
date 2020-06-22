@@ -76,7 +76,17 @@ Ao movimentar-se os pontos serão adicionados ao mapa para garantir que eles ser
 
 ### tests
 ```bash
-   ./test
+   go test
+
+   # Ouput coverage std out
+   go test -v -cover  
+
+   # Generate coverage file out
+   go test -coverprofile=./coverage/tests.out
+
+   # Generate coverage HTML file out
+   go tool cover -html=./coverage/tests.out -o /coverage/coverage-report.html
+
 ```
 
 ### Benchnmark
