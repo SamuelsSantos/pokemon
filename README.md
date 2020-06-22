@@ -1,5 +1,7 @@
 # Pokemon
 
+![Go](https://github.com/desafios-job/pokemon/workflows/Go/badge.svg)
+
 ## Problema:
 
 O Ash está a apanhar pokémons num mundo que consiste numa grelha bidimensional infinita de casas.
